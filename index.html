@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>HQ Lux Performance — Your Mechanic, Anywhere.</title>
+<meta name="description" content="On-demand mobile mechanics at your door. Book in seconds, track in real-time, pay seamlessly. Available in Chicago, IL."/>
+<meta property="og:title" content="HQ Lux Performance — Your Mechanic, Anywhere."/>
+<meta property="og:description" content="On-demand mobile mechanics at your door. Book in seconds, track in real-time, pay seamlessly."/>
+<meta property="og:url" content="https://hqluxperformance.com"/>
+<meta property="og:type" content="website"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="HQ Lux Performance — Your Mechanic, Anywhere."/>
+<meta name="twitter:description" content="On-demand mobile mechanics at your door. Book in seconds, track in real-time."/>
+<link rel="canonical" href="https://hqluxperformance.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet"/>
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --black:#0A0A0A;
+    --red:#CC0000;
+    --chrome:#C0C0C0;
+    --white:#F5F5F5;
+    --dark:#111111;
+    --card:#161616;
+  }
+  html{scroll-behavior:smooth}
+  body{background:var(--black);color:var(--white);font-family:'Barlow',sans-serif;overflow-x:hidden}
+
+  /* NAV */
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 40px;display:flex;justify-content:space-between;align-items:center;background:rgba(10,10,10,0.85);backdrop-filter:blur(12px);border-bottom:1px solid rgba(192,192,192,0.08)}
+  .nav-logo{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:3px;color:var(--white)}
+  .nav-logo span{color:var(--red)}
+  .nav-cta{background:var(--red);color:#fff;border:none;padding:10px 24px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:15px;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;clip-path:polygon(8px 0%,100% 0%,100% calc(100% - 8px),calc(100% - 8px) 100%,0% 100%,0% 8px);transition:opacity 0.2s}
+  .nav-cta:hover{opacity:0.85}
+
+  /* HERO */
+  .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:120px 40px 80px;position:relative;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 75% 50%,rgba(204,0,0,0.12) 0%,transparent 70%),radial-gradient(ellipse 40% 40% at 20% 80%,rgba(192,192,192,0.04) 0%,transparent 60%);z-index:0}
+  .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(192,192,192,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(192,192,192,0.03) 1px,transparent 1px);background-size:60px 60px;z-index:0}
+  .hero-content{position:relative;z-index:1;max-width:700px}
+  .hero-eyebrow{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:4px;text-transform:uppercase;color:var(--red);margin-bottom:20px;display:flex;align-items:center;gap:10px}
+  .hero-eyebrow::before{content:'';display:block;width:32px;height:2px;background:var(--red)}
+  h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(64px,10vw,130px);line-height:0.9;letter-spacing:2px;color:var(--white);margin-bottom:12px}
+  h1 .accent{color:var(--red)}
+  h1 .chrome{color:var(--chrome)}
+  .hero-tagline{font-family:'Barlow Condensed',sans-serif;font-size:clamp(18px,3vw,26px);font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--chrome);margin-bottom:32px}
+  .hero-desc{font-size:17px;line-height:1.7;color:rgba(245,245,245,0.65);max-width:480px;margin-bottom:48px}
+  .hero-actions{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+  .btn-primary{background:var(--red);color:#fff;border:none;padding:16px 36px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;clip-path:polygon(10px 0%,100% 0%,100% calc(100% - 10px),calc(100% - 10px) 100%,0% 100%,0% 10px);transition:all 0.2s;text-decoration:none;display:inline-block}
+  .btn-primary:hover{opacity:0.85;transform:translateY(-1px)}
+  .btn-outline{background:transparent;color:var(--chrome);border:1px solid rgba(192,192,192,0.4);padding:15px 36px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:all 0.2s;text-decoration:none;display:inline-block}
+  .btn-outline:hover{border-color:var(--chrome);color:#fff}
+  .hero-badge{position:absolute;right:40px;bottom:60px;z-index:1;text-align:center;opacity:0.5}
+  .hero-badge-text{font-family:'Bebas Neue',sans-serif;font-size:11px;letter-spacing:4px;color:var(--chrome);display:block}
+
+  /* DIVIDER */
+  .divider{height:1px;background:linear-gradient(90deg,transparent,rgba(192,192,192,0.15),rgba(204,0,0,0.4),rgba(192,192,192,0.15),transparent)}
+
+  /* HOW IT WORKS */
+  section{padding:100px 40px}
+  .section-label{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:5px;text-transform:uppercase;color:var(--red);margin-bottom:16px}
+  .section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(42px,6vw,72px);letter-spacing:2px;color:var(--white);margin-bottom:48px}
+  .section-title span{color:var(--chrome)}
+
+  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2px;margin-top:48px}
+  .step{background:var(--card);padding:40px 32px;position:relative;border-bottom:2px solid transparent;transition:border-color 0.3s}
+  .step:hover{border-bottom-color:var(--red)}
+  .step-num{font-family:'Bebas Neue',sans-serif;font-size:72px;color:rgba(204,0,0,0.12);position:absolute;top:16px;right:24px;line-height:1}
+  .step-icon{width:48px;height:48px;background:rgba(204,0,0,0.1);border:1px solid rgba(204,0,0,0.2);display:flex;align-items:center;justify-content:center;margin-bottom:24px;font-size:22px}
+  .step h3{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:20px;letter-spacing:1px;text-transform:uppercase;color:var(--white);margin-bottom:12px}
+  .step p{font-size:14px;line-height:1.7;color:rgba(245,245,245,0.55)}
+
+  /* FEATURES */
+  .features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1px;background:rgba(192,192,192,0.06);border:1px solid rgba(192,192,192,0.06)}
+  .feature{background:var(--black);padding:40px 36px;border-bottom:2px solid transparent;transition:all 0.3s}
+  .feature:hover{background:var(--card);border-bottom-color:var(--red)}
+  .feature-icon{font-size:28px;margin-bottom:20px}
+  .feature h3{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:18px;letter-spacing:1px;text-transform:uppercase;color:var(--white);margin-bottom:10px}
+  .feature p{font-size:14px;line-height:1.7;color:rgba(245,245,245,0.5)}
+
+  /* STATS */
+  .stats-section{background:var(--dark);padding:80px 40px}
+  .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:rgba(192,192,192,0.08);max-width:900px;margin:0 auto}
+  .stat{background:var(--dark);padding:48px 32px;text-align:center}
+  .stat-num{font-family:'Bebas Neue',sans-serif;font-size:64px;color:var(--red);line-height:1;display:block}
+  .stat-label{font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--chrome);opacity:0.7;margin-top:8px;display:block}
+
+  /* CTA SECTION */
+  .cta-section{background:var(--black);padding:120px 40px;text-align:center;position:relative;overflow:hidden}
+  .cta-bg{position:absolute;inset:0;background:radial-gradient(ellipse 50% 80% at 50% 100%,rgba(204,0,0,0.15) 0%,transparent 60%);z-index:0}
+  .cta-section>*{position:relative;z-index:1}
+  .cta-section h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(48px,8vw,96px);letter-spacing:2px;color:var(--white);margin-bottom:16px}
+  .cta-section h2 span{color:var(--red)}
+  .cta-section p{font-size:18px;color:rgba(245,245,245,0.6);margin-bottom:48px;max-width:500px;margin-left:auto;margin-right:auto}
+
+  /* NOTIFY FORM */
+  .notify-form{display:flex;gap:0;max-width:480px;margin:0 auto;flex-wrap:wrap;justify-content:center}
+  .notify-form input{flex:1;min-width:220px;background:rgba(255,255,255,0.05);border:1px solid rgba(192,192,192,0.2);border-right:none;padding:16px 20px;font-family:'Barlow',sans-serif;font-size:15px;color:var(--white);outline:none;transition:border-color 0.2s}
+  .notify-form input::placeholder{color:rgba(245,245,245,0.3)}
+  .notify-form input:focus{border-color:rgba(204,0,0,0.5)}
+  .notify-form button{background:var(--red);color:#fff;border:none;padding:16px 28px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:opacity 0.2s;white-space:nowrap}
+  .notify-form button:hover{opacity:0.85}
+  .notify-form-note{font-size:12px;color:rgba(245,245,245,0.3);margin-top:14px;letter-spacing:0.5px}
+  .success-msg{display:none;color:var(--chrome);font-family:'Barlow Condensed',sans-serif;font-size:18px;letter-spacing:2px;text-transform:uppercase;margin-top:20px}
+
+  /* APP BADGES */
+  .app-badges{display:flex;gap:16px;justify-content:center;margin-top:48px;flex-wrap:wrap}
+  .badge{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,0.05);border:1px solid rgba(192,192,192,0.15);padding:12px 24px;text-decoration:none;transition:all 0.2s;min-width:160px}
+  .badge:hover{background:rgba(255,255,255,0.08);border-color:rgba(192,192,192,0.3)}
+  .badge-icon{font-size:26px;line-height:1}
+  .badge-text{text-align:left}
+  .badge-sub{font-size:10px;letter-spacing:1px;color:rgba(245,245,245,0.4);text-transform:uppercase;display:block}
+  .badge-name{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;color:var(--white);letter-spacing:0.5px;display:block}
+
+  /* FOOTER */
+  footer{padding:40px;border-top:1px solid rgba(192,192,192,0.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-logo{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:3px;color:rgba(245,245,245,0.3)}
+  .footer-logo span{color:rgba(204,0,0,0.5)}
+  .footer-links{display:flex;gap:28px}
+  .footer-links a{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:rgba(245,245,245,0.3);text-decoration:none;transition:color 0.2s}
+  .footer-links a:hover{color:var(--chrome)}
+  .footer-copy{font-size:12px;color:rgba(245,245,245,0.2);letter-spacing:0.5px}
+
+  /* ANIMATIONS */
+  @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+  .hero-content>*{animation:fadeUp 0.7s ease both}
+  .hero-eyebrow{animation-delay:0.1s}
+  h1{animation-delay:0.2s}
+  .hero-tagline{animation-delay:0.3s}
+  .hero-desc{animation-delay:0.4s}
+  .hero-actions{animation-delay:0.5s}
+
+  /* RESPONSIVE */
+  @media(max-width:640px){
+    nav{padding:16px 20px}
+    .hero{padding:100px 20px 60px}
+    section{padding:60px 20px}
+    .stats-section{padding:60px 20px}
+    .cta-section{padding:80px 20px}
+    footer{padding:32px 20px;flex-direction:column;text-align:center}
+    .footer-links{justify-content:center}
+    .notify-form input{border-right:1px solid rgba(192,192,192,0.2);border-bottom:none;width:100%}
+    .notify-form button{width:100%}
+    .hero-badge{display:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">HQ <span>LUX</span></div>
+  <button class="nav-cta" onclick="document.getElementById('notify').scrollIntoView({behavior:'smooth'})">Get Early Access</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Now Available on iOS &amp; Android</div>
+    <h1>HQ <span class="accent">LUX</span><br><span class="chrome">PERFORMANCE</span></h1>
+    <div class="hero-tagline">Your Mechanic, Anywhere.</div>
+    <p class="hero-desc">On-demand mobile mechanics at your door. Book in seconds, track in real-time, pay seamlessly. Professional service — wherever you are.</p>
+    <div class="hero-actions">
+      <a href="#notify" class="btn-primary" onclick="document.getElementById('notify').scrollIntoView({behavior:'smooth'});return false">Download the App</a>
+      <a href="#how-it-works" class="btn-outline" onclick="document.getElementById('how-it-works').scrollIntoView({behavior:'smooth'});return false">See How It Works</a>
+    </div>
+  </div>
+  <div class="hero-badge">
+    <span class="hero-badge-text">Chicago, IL</span>
+    <span class="hero-badge-text" style="color:rgba(204,0,0,0.6);font-size:18px;display:block;margin:4px 0">◆</span>
+    <span class="hero-badge-text">Est. 2025</span>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- HOW IT WORKS -->
+<section id="how-it-works">
+  <div class="section-label">How It Works</div>
+  <div class="section-title">Three Steps.<br><span>Zero Hassle.</span></div>
+  <div class="steps">
+    <div class="step">
+      <span class="step-num">01</span>
+      <div class="step-icon">📍</div>
+      <h3>Book Your Service</h3>
+      <p>Tell us what your car needs, drop your location, and pick a time that works — all in under 60 seconds.</p>
+    </div>
+    <div class="step">
+      <span class="step-num">02</span>
+      <div class="step-icon">🔧</div>
+      <h3>Mechanic En Route</h3>
+      <p>A vetted, certified mechanic is dispatched to you. Track them in real-time — just like a rideshare.</p>
+    </div>
+    <div class="step">
+      <span class="step-num">03</span>
+      <div class="step-icon">✅</div>
+      <h3>Done. Pay &amp; Go</h3>
+      <p>Service complete. Pay securely through the app. Rate your mechanic. No invoices, no waiting rooms.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FEATURES -->
+<section id="features">
+  <div class="section-label">Why HQ Lux</div>
+  <div class="section-title">Built Different.<br><span>Built For You.</span></div>
+  <div class="features-grid">
+    <div class="feature">
+      <div class="feature-icon">⚡</div>
+      <h3>Surge-Smart Pricing</h3>
+      <p>Real-time pricing that's always transparent. Know exactly what you're paying before you book.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🛡️</div>
+      <h3>Vetted Mechanics</h3>
+      <p>Every mechanic passes a background check and skills verification before they join the platform.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">📍</div>
+      <h3>Real-Time Tracking</h3>
+      <p>Watch your mechanic navigate to you live on the map. No guessing, no phone tag.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">💳</div>
+      <h3>Secure Payments</h3>
+      <p>Powered by Stripe. Your card data is encrypted and never stored on our servers.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">⭐</div>
+      <h3>Ratings &amp; Reviews</h3>
+      <p>Full transparency on every mechanic. Community-rated so you always know who's showing up.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🔔</div>
+      <h3>Push Notifications</h3>
+      <p>Get updates every step of the way — when your mechanic is confirmed, en route, and on-site.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-section">
+  <div class="stats-grid">
+    <div class="stat">
+      <span class="stat-num">60s</span>
+      <span class="stat-label">Avg. Booking Time</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">24/7</span>
+      <span class="stat-label">Available Anytime</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">100%</span>
+      <span class="stat-label">Vetted Mechanics</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">$0</span>
+      <span class="stat-label">Hidden Fees</span>
+    </div>
+  </div>
+</div>
+
+<!-- CTA / NOTIFY -->
+<section class="cta-section" id="notify">
+  <div class="cta-bg"></div>
+  <div class="section-label" style="display:inline-block">Get Early Access</div>
+  <h2>Download<br><span>The App</span></h2>
+  <p>Available now on iOS. Android coming soon. Enter your email to get notified.</p>
+
+  <div class="app-badges">
+    <a href="#" class="badge">
+      <span class="badge-icon">🍎</span>
+      <span class="badge-text">
+        <span class="badge-sub">Download on the</span>
+        <span class="badge-name">App Store</span>
+      </span>
+    </a>
+    <a href="#" class="badge">
+      <span class="badge-icon">▶</span>
+      <span class="badge-text">
+        <span class="badge-sub">Get it on</span>
+        <span class="badge-name">Google Play</span>
+      </span>
+    </a>
+  </div>
+
+  <div style="margin-top:48px">
+    <div class="notify-form" id="notify-form">
+      <input type="email" id="email-input" placeholder="Enter your email address" autocomplete="email"/>
+      <button onclick="handleNotify()">Notify Me</button>
+    </div>
+    <p class="notify-form-note">No spam. Just your launch notification.</p>
+    <div class="success-msg" id="success-msg">✓ &nbsp;You're on the list. We'll be in touch.</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">HQ <span>LUX</span> PERFORMANCE</div>
+  <div class="footer-links">
+    <a href="https://hqluxperformance.com/privacy">Privacy Policy</a>
+    <a href="#">Terms</a>
+    <a href="#">Contact</a>
+    <a href="#">Become a Mechanic</a>
+  </div>
+  <div class="footer-copy">© 2026 HQ Lux Performance LLC. Chicago, IL. · hqluxperformance.com</div>
+</footer>
+
+<script>
+function handleNotify(){
+  var email=document.getElementById('email-input').value.trim();
+  if(!email||!email.includes('@')){
+    document.getElementById('email-input').style.borderColor='rgba(204,0,0,0.6)';
+    return;
+  }
+  document.getElementById('notify-form').style.display='none';
+  document.querySelector('.notify-form-note').style.display='none';
+  document.getElementById('success-msg').style.display='block';
+}
+</script>
+</body>
+</html>
